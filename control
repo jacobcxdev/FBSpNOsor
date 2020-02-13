@@ -3,7 +3,7 @@ Name: FBSpNOser
 Depends: mobilesubstrate
 Version: 1.0.0
 Architecture: iphoneos-arm
-Description: A tweak to remove sponsored posts from Facebook.
+Description: A tweak to remove sponsored posts, suggested posts, etc. from Facebook.
 Maintainer: JacobCXDev
 Author: JacobCXDev
 Section: Tweaks

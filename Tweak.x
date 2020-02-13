@@ -1,12 +1,18 @@
 #import <Foundation/Foundation.h>
 
-@interface FBMemSponsoredData : NSObject
+@interface FBMemNewsFeedEdge : NSObject
++ (id)newFromFBTree:(void *)arg1;
 - (id)initWithFBTree:(void *)arg1;
+- (id)category;
 @end
 
-%hook FBMemSponsoredData
+%hook FBMemNewsFeedEdge
 - (id)initWithFBTree:(void *)arg1 {
-	return nil;
+	id orig = %orig;
+	if (![[orig category] isEqual:@"ORGANIC"]) {
+		return nil;
+	}
+	return orig;
 }
 %end
 
