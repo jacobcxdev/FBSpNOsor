@@ -13,10 +13,7 @@
 %hook FBMemNewsFeedEdge
 - (id)initWithFBTree:(void *)arg1 {
 	id orig = %orig;
-	if (![[orig category] isEqual:@"ORGANIC"]) {
-		return nil;
-	}
-	return orig;
+	return [[orig category] isEqual:@"ORGANIC"] ? orig : nil;
 }
 %end
 
