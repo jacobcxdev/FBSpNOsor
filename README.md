@@ -1,2 +1,2 @@
 # FBSpNOser
-A tweak to remove sponsored posts, suggested posts, etc. from Facebook — written in Objective-C + Logos.
+A tweak to remove sponsored and suggested posts, videos, etc. from Facebook — written in Objective-C + Logos.
