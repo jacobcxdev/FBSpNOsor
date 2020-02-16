@@ -1,9 +1,16 @@
 #import <Foundation/Foundation.h>
 
-@interface FBMemNewsFeedEdge : NSObject
+@interface FBMemModelObject : NSObject
 - (id)initWithFBTree:(void *)arg1;
+@end
+
+@interface FBMemNewsFeedEdge : FBMemModelObject
 - (id)category;
 @end;
+
+@interface FBMemFeedStory : FBMemModelObject
+- (id)sponsoredData;
+@end
 
 @interface FBVideoChannelPlaylistItem : NSObject
 - (id)Bi:(id)arg1 :(id)arg2 :(id)arg3 :(id)arg4 :(id)arg5 :(id)arg6 :(id)arg7;
@@ -14,6 +21,13 @@
 - (id)initWithFBTree:(void *)arg1 {
 	id orig = %orig;
 	return [[orig category] isEqual:@"ORGANIC"] ? orig : nil;
+}
+%end
+
+%hook FBMemFeedStory
+- (id)initWithFBTree:(void *)arg1 {
+	id orig = %orig;
+	return [orig sponsoredData] == nil ? orig : nil;
 }
 %end
 
