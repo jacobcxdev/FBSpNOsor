@@ -1,4 +1,21 @@
+//
+//  Tweak.x
+//  FBSpNOsor
+//
+//  Created by Jacob Clayden on 13/02/2020.
+//  Copyright © 2020 JacobCXDev. All rights reserved.
+//
+
 #import <Foundation/Foundation.h>
+
+// NSUserDefaults Interfaces
+
+@interface NSUserDefaults (FBSpNOsor)
+- (NSNumber *)objectForKey:(NSString *)key inDomain:(NSString *)domain;
+- (void)setObject:(id)value forKey:(NSString *)key inDomain:(NSString *)domain;
+@end
+
+// Facebook Interfaces
 
 @interface FBMemModelObject : NSObject
 - (id)initWithFBTree:(void *)arg1;
@@ -16,6 +33,8 @@
 - (id)Bi:(id)arg1 :(id)arg2 :(id)arg3 :(id)arg4 :(id)arg5 :(id)arg6 :(id)arg7;
 - (bool)isSponsored;
 @end
+
+// Facebook Hooks
 
 %hook FBMemNewsFeedEdge
 - (id)initWithFBTree:(void *)arg1 {
@@ -39,6 +58,13 @@
 }
 %end
 
+// Constructor
+
 %ctor {
-	NSLog(@"FBSpNOser loaded");
+	NSMutableDictionary *settings = [[NSMutableDictionary alloc] initWithContentsOfFile:@"/var/mobile/Library/Preferences/com.jacobcxdev.fbspnosor.plist"];
+	bool enabled = [settings objectForKey:@"enabled"] ? [[settings objectForKey:@"enabled"] boolValue] : true;
+	if (!enabled) return;
+	%init();
+	
+	NSLog(@"FBSpNOsor loaded");
 }
