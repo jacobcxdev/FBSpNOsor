@@ -8,13 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-// NSUserDefaults Interfaces
-
-@interface NSUserDefaults (FBSpNOsor)
-- (NSNumber *)objectForKey:(NSString *)key inDomain:(NSString *)domain;
-- (void)setObject:(id)value forKey:(NSString *)key inDomain:(NSString *)domain;
-@end
-
 // Facebook Interfaces
 
 @interface FBMemModelObject : NSObject
