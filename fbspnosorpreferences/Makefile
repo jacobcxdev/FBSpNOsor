@@ -1,6 +1,3 @@
-ARCHS = arm64 arm64e
-TARGET = iphone::11.0:latest
-
 include $(THEOS)/makefiles/common.mk
 
 BUNDLE_NAME = FBSpNOsorPreferences
