@@ -48,7 +48,7 @@
 			<key>cellClass</key>
 			<string>FBPTwitterCell</string>
 			<key>label</key>
-			<string>Follow me on Twitter!</string>
+			<string>Follow me on Twitter</string>
 			<key>username</key>
 			<string>jcxdev</string>
 			<key>shouldDisplayAvatar</key>
@@ -61,6 +61,16 @@
 			<string>Donate to me :)</string>
 			<key>username</key>
 			<string>jacobcxdev</string>
+			<key>shouldDisplayAvatar</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>cellClass</key>
+			<string>FBPMailCell</string>
+			<key>label</key>
+			<string>Email me for support</string>
+			<key>emailAddress</key>
+			<string>jacobcxdev@gmail.com</string>
 			<key>shouldDisplayAvatar</key>
 			<true/>
 		</dict>

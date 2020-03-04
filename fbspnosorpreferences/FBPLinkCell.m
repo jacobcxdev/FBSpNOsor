@@ -24,6 +24,7 @@
             UIGraphicsEndImageContext();
 
             _avatarView = [[UIView alloc] initWithFrame:self.imageView.bounds];
+            _avatarView.contentMode = UIViewContentModeScaleAspectFit;
             _avatarView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
             _avatarView.userInteractionEnabled = false;
             _avatarView.clipsToBounds = true;
@@ -34,6 +35,7 @@
             [self.imageView addSubview:_avatarView];
 
             _avatarImageView = [[UIImageView alloc] initWithFrame:_avatarView.bounds];
+            _avatarImageView.contentMode = UIViewContentModeScaleAspectFit;
             _avatarImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
             _avatarImageView.userInteractionEnabled = false;
             _avatarImageView.layer.minificationFilter = kCAFilterTrilinear;
