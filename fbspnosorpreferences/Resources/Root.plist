@@ -58,9 +58,19 @@
 			<key>cellClass</key>
 			<string>FBPPayPalCell</string>
 			<key>label</key>
-			<string>Donate to me :)</string>
+			<string>Donate to me via PayPal</string>
 			<key>username</key>
 			<string>jacobcxdev</string>
+			<key>shouldDisplayAvatar</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>cellClass</key>
+			<string>FBPCashAppCell</string>
+			<key>label</key>
+			<string>Donate to me via CashApp</string>
+			<key>cashTag</key>
+			<string>£JacobCXDev</string>
 			<key>shouldDisplayAvatar</key>
 			<true/>
 		</dict>
