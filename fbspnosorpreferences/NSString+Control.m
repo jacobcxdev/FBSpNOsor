@@ -3,7 +3,7 @@
 @implementation NSString (Control)
 - (NSString *)stringByInterpolatingPackageInfoFromControl:(NSDictionary *)control {
     NSString *string = [self copy];
-    NSError *error = NULL;
+    NSError *error = nil;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\\{(?<fieldName>\\S+)\\}" options:0 error:&error];
     NSArray *matches = [regex matchesInString:string options:0 range:NSMakeRange(0, string.length)];
     for (int i = matches.count - 1; i >= 0; i--) {

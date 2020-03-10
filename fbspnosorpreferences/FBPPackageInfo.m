@@ -23,7 +23,7 @@ static NSMutableDictionary *_control = nil;
     
     NSData *data = [outputFile readDataToEndOfFile];
     NSString *output = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSError *error = NULL;
+    NSError *error = nil;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(?<fieldName>.+):\\s*(?<fieldContent>.*)" options:0 error:&error];
     NSArray *matches = [regex matchesInString:output options:0 range:NSMakeRange(0, output.length)];
     _control = [[NSMutableDictionary alloc] init];
