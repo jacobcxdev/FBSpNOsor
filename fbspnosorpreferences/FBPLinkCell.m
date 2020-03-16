@@ -2,21 +2,21 @@
 
 @implementation FBPLinkCell
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier specifier:(PSSpecifier *)specifier {
-	self = [super initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier specifier:specifier];
-	if (self) {
+    self = [super initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier specifier:specifier];
+    if (self) {
         CGFloat size = 38;
-		self.selectionStyle = UITableViewCellSelectionStyleBlue;
-		self.detailTextLabel.text = specifier.properties[@"subtitle"] ?: @"";
+        self.selectionStyle = UITableViewCellSelectionStyleBlue;
+        self.detailTextLabel.text = specifier.properties[@"subtitle"] ?: @"";
         _avatarImageSystemName = specifier.properties[@"avatarImageSystemName"];
         _accessoryImageSystemName = specifier.properties[@"accessoryImageSystemName"];
         _shouldDisplayAvatar = specifier.properties[@"shouldDisplayAvatar"];
         _avatarURL = [NSURL URLWithString:specifier.properties[@"avatarURL"]];
         _linkURL = [NSURL URLWithString:specifier.properties[@"linkURL"]];
 
-		self.accessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size, size)];
+        self.accessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size, size)];
         if (_accessoryImageSystemName)
             if (@available(iOS 13, *)) ((UIImageView *)self.accessoryView).image = [UIImage systemImageNamed:_accessoryImageSystemName];
-		[self.accessoryView sizeToFit];
+        [self.accessoryView sizeToFit];
 
         if (_shouldDisplayAvatar) {
             UIGraphicsBeginImageContextWithOptions(CGSizeMake(size, size), false, [UIScreen mainScreen].scale);
@@ -29,9 +29,9 @@
             _avatarView.userInteractionEnabled = false;
             _avatarView.clipsToBounds = true;
             _avatarView.layer.cornerRadius = size / 2;
-			_avatarView.layer.borderWidth = 2;
+            _avatarView.layer.borderWidth = 2;
             if (@available(iOS 13, *)) _avatarView.layer.borderColor = [UIColor tertiaryLabelColor].CGColor;
-			else _avatarView.layer.borderColor = [UIColor colorWithWhite:1 alpha:0.3].CGColor;
+            else _avatarView.layer.borderColor = [UIColor colorWithWhite:1 alpha:0.3].CGColor;
             [self.imageView addSubview:_avatarView];
 
             _avatarImageView = [[UIImageView alloc] initWithFrame:_avatarView.bounds];
@@ -46,8 +46,8 @@
             
             [self loadAvatarIfNeeded];
         }
-	}
-	return self;
+    }
+    return self;
 }
 - (void)loadAvatarIfNeeded {
     if (_avatar) return;
@@ -77,8 +77,8 @@
     _linkURL = url;
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-	[super setSelected:selected animated:animated];
-	if (!selected || !_linkURL) return;
+    [super setSelected:selected animated:animated];
+    if (!selected || !_linkURL) return;
     if ([[UIApplication sharedApplication] canOpenURL:_linkURL])
         [[UIApplication sharedApplication] openURL:_linkURL options:@{} completionHandler:nil];
 }

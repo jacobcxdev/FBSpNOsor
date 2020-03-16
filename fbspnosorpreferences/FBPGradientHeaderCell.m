@@ -2,7 +2,7 @@
 
 @implementation FBPGradientHeaderCell
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier specifier:(PSSpecifier *)specifier {
-	self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier specifier:specifier];
+    self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier specifier:specifier];
     if (self) {
         if (!specifier.properties[@"height"]) specifier.properties[@"height"] = [NSNumber numberWithInt:176];
         self.textLabel.text = nil;
@@ -141,7 +141,7 @@
             _detailLabel.textAlignment = NSTextAlignmentCenter;
         }
     }
-	return self;
+    return self;
 }
 - (void)layoutSubviews {
     _gradientLayer.frame = self.bounds;
