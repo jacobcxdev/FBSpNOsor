@@ -3,6 +3,7 @@ A tweak for Facebook — written in Objective-C + Logos.
 
 ## Features
 * Hides sponsored posts from various feeds
+* Hides suggested posts from various feeds
 * Hides ads during videos
 
 ## Configuration Options
