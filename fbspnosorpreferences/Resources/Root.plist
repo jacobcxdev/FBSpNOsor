@@ -84,6 +84,16 @@
             <key>shouldDisplayAvatar</key>
             <true/>
         </dict>
+        <dict>
+            <key>cellClass</key>
+            <string>FBPGitHubCell</string>
+            <key>label</key>
+            <string>View the source code on GitHub</string>
+            <key>remote</key>
+            <string>jacobcxdev/FBSpNOsor</string>
+            <key>shouldDisplayAvatar</key>
+            <true/>
+        </dict>
     </array>
     <key>title</key>
     <string>FBSpNOsor</string>
