@@ -1,7 +1,6 @@
 #import "FBPTableCell.h"
 
-@interface FBPGradientHeaderCellBlurContentView : UIView
-{
+@interface FBPGradientHeaderCellBlurContentView : UIView {
     CAShapeLayer *_borderLayer;
 }
 @end
