@@ -13,4 +13,4 @@ A tweak for Facebook — written in Objective-C + Logos.
 
 ## Screenshots
 
-![Preferences](https://user-images.githubusercontent.com/27970288/77005163-44c4ad00-6958-11ea-99c0-a9061e6410df.png)
+![Preferences](https://user-images.githubusercontent.com/27970288/78467318-5bfaed00-7703-11ea-8f0e-ce52c73640a7.png)
