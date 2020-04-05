@@ -28,7 +28,7 @@ static NSMutableDictionary *_control = nil;
     NSArray *matches = [regex matchesInString:output options:0 range:NSMakeRange(0, output.length)];
     _control = [[NSMutableDictionary alloc] init];
     for (NSTextCheckingResult *match in matches)
-        [_control setObject:[output substringWithRange:[match rangeWithName:@"fieldContent"]] forKey:[output substringWithRange:[match rangeWithName:@"fieldName"]]];
+        _control[[output substringWithRange:[match rangeWithName:@"fieldName"]]] = [output substringWithRange:[match rangeWithName:@"fieldContent"]];
 }
 + (void)retrieveControl {
     NSDictionary *info = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle bundleForClass:self.class] pathForResource:@"Info" ofType:@"plist"]];

@@ -9,7 +9,7 @@
         self.detailTextLabel.text = specifier.properties[@"subtitle"] ?: @"";
         _avatarImageSystemName = specifier.properties[@"avatarImageSystemName"];
         _accessoryImageSystemName = specifier.properties[@"accessoryImageSystemName"];
-        _shouldDisplayAvatar = specifier.properties[@"shouldDisplayAvatar"];
+        _shouldDisplayAvatar = specifier.properties[@"shouldDisplayAvatar"] && [specifier.properties[@"shouldDisplayAvatar"] boolValue];
         _avatarURL = [NSURL URLWithString:specifier.properties[@"avatarURL"]];
         _linkURL = [NSURL URLWithString:specifier.properties[@"linkURL"]];
 

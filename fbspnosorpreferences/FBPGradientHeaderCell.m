@@ -41,7 +41,7 @@
         _gradientLayer.frame = self.bounds;
         [_blurView.layer insertSublayer:_gradientLayer atIndex:0];
 
-        _animated = specifier.properties[@"animated"];
+        _animated = specifier.properties[@"animated"] && [specifier.properties[@"animated"] boolValue];
 
         if (specifier.properties[@"icon"]) _icon = [UIImage imageNamed:specifier.properties[@"icon"] inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil];
         if (_icon) {
