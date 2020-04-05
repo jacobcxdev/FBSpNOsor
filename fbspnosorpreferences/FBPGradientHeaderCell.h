@@ -8,6 +8,7 @@
     UIView *_blurContentView;
     CAGradientLayer *_gradientLayer;
     UIVisualEffectView *_blurView;
-    BOOL _animated;
+    bool _animated;
 }
+- (void)addAnimation;
 @end

@@ -42,41 +42,6 @@
         [_blurView.layer insertSublayer:_gradientLayer atIndex:0];
 
         _animated = specifier.properties[@"animated"];
-        if (_animated) {
-            [_gradientLayer removeAllAnimations];
-            const CFTimeInterval duration = [(NSNumber *)specifier.properties[@"animationDuration"] doubleValue] ?: 15;
-            const CAKeyframeAnimation *startPointAnimation = [CAKeyframeAnimation animationWithKeyPath:@"startPoint"];
-            startPointAnimation.values = @[[NSValue valueWithCGPoint:CGPointMake(0, 1)],
-                            [NSValue valueWithCGPoint:CGPointMake(1, 1)],
-                            [NSValue valueWithCGPoint:CGPointMake(1, 1)],
-                            [NSValue valueWithCGPoint:CGPointMake(1, -1)],
-                            [NSValue valueWithCGPoint:CGPointMake(1, -1)],
-                            [NSValue valueWithCGPoint:CGPointMake(-1, -1)],
-                            [NSValue valueWithCGPoint:CGPointMake(-1, -1)],
-                            [NSValue valueWithCGPoint:CGPointMake(-1, 1)],
-                            [NSValue valueWithCGPoint:CGPointMake(0, 1)],
-                            [NSValue valueWithCGPoint:CGPointMake(0, 1)]];
-            startPointAnimation.duration = duration;
-            const CAKeyframeAnimation *endPointAnimation = [CAKeyframeAnimation animationWithKeyPath:@"endPoint"];
-            endPointAnimation.values = @[[NSValue valueWithCGPoint:CGPointMake(1, 0)],
-                            [NSValue valueWithCGPoint:CGPointMake(1, 0)],
-                            [NSValue valueWithCGPoint:CGPointMake(-1, 0)],
-                            [NSValue valueWithCGPoint:CGPointMake(-1, 1)],
-                            [NSValue valueWithCGPoint:CGPointMake(1, 1)],
-                            [NSValue valueWithCGPoint:CGPointMake(1, 1)],
-                            [NSValue valueWithCGPoint:CGPointMake(1, -1)],
-                            [NSValue valueWithCGPoint:CGPointMake(1, -1)],
-                            [NSValue valueWithCGPoint:CGPointMake(1, -1)],
-                            [NSValue valueWithCGPoint:CGPointMake(1, 0)]];
-            endPointAnimation.duration = duration;
-            
-            CAAnimationGroup *animationGroup = [[CAAnimationGroup alloc] init];
-            animationGroup.animations = @[startPointAnimation, endPointAnimation];
-            animationGroup.duration = duration;
-            animationGroup.repeatCount = INFINITY;
-            
-            [_gradientLayer addAnimation:animationGroup forKey:@"FBPAnimation"];
-        }
 
         if (specifier.properties[@"icon"]) _icon = [UIImage imageNamed:specifier.properties[@"icon"] inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil];
         if (_icon) {
@@ -143,7 +108,45 @@
     }
     return self;
 }
+- (void)didMoveToWindow {
+    if (_animated) [self addAnimation];
+}
 - (void)layoutSubviews {
     _gradientLayer.frame = self.bounds;
+}
+- (void)addAnimation {
+    [_gradientLayer removeAllAnimations];
+    const CFTimeInterval duration = [(NSNumber *)_specifier.properties[@"animationDuration"] doubleValue] ?: 15;
+    const CAKeyframeAnimation *startPointAnimation = [CAKeyframeAnimation animationWithKeyPath:@"startPoint"];
+    startPointAnimation.values = @[[NSValue valueWithCGPoint:CGPointMake(0, 1)],
+                    [NSValue valueWithCGPoint:CGPointMake(1, 1)],
+                    [NSValue valueWithCGPoint:CGPointMake(1, 1)],
+                    [NSValue valueWithCGPoint:CGPointMake(1, -1)],
+                    [NSValue valueWithCGPoint:CGPointMake(1, -1)],
+                    [NSValue valueWithCGPoint:CGPointMake(-1, -1)],
+                    [NSValue valueWithCGPoint:CGPointMake(-1, -1)],
+                    [NSValue valueWithCGPoint:CGPointMake(-1, 1)],
+                    [NSValue valueWithCGPoint:CGPointMake(0, 1)],
+                    [NSValue valueWithCGPoint:CGPointMake(0, 1)]];
+    startPointAnimation.duration = duration;
+    const CAKeyframeAnimation *endPointAnimation = [CAKeyframeAnimation animationWithKeyPath:@"endPoint"];
+    endPointAnimation.values = @[[NSValue valueWithCGPoint:CGPointMake(1, 0)],
+                    [NSValue valueWithCGPoint:CGPointMake(1, 0)],
+                    [NSValue valueWithCGPoint:CGPointMake(-1, 0)],
+                    [NSValue valueWithCGPoint:CGPointMake(-1, 1)],
+                    [NSValue valueWithCGPoint:CGPointMake(1, 1)],
+                    [NSValue valueWithCGPoint:CGPointMake(1, 1)],
+                    [NSValue valueWithCGPoint:CGPointMake(1, -1)],
+                    [NSValue valueWithCGPoint:CGPointMake(1, -1)],
+                    [NSValue valueWithCGPoint:CGPointMake(1, -1)],
+                    [NSValue valueWithCGPoint:CGPointMake(1, 0)]];
+    endPointAnimation.duration = duration;
+    
+    CAAnimationGroup *animationGroup = [[CAAnimationGroup alloc] init];
+    animationGroup.animations = @[startPointAnimation, endPointAnimation];
+    animationGroup.duration = duration;
+    animationGroup.repeatCount = INFINITY;
+    
+    [_gradientLayer addAnimation:animationGroup forKey:@"FBPAnimation"];
 }
 @end
