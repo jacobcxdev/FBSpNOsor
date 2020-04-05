@@ -23,8 +23,8 @@
             <string>Main Preferences</string>
         </dict>
         <dict>
-            <key>cellClass</key>
-            <string>FBPSwitchTableCell</string>
+            <key>cell</key>
+            <string>PSSwitchCell</string>
             <key>default</key>
             <true/>
             <key>defaults</key>

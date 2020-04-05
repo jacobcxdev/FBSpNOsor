@@ -3,7 +3,7 @@
 //  FBSpNOsor
 //
 //  Created by Jacob Clayden on 13/02/2020.
-//  Copyright © 2020 JacobCXDev. All rights reserved.
+//  Copyright Â© 2020 JacobCXDev. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

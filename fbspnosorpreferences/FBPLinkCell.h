@@ -8,7 +8,7 @@
     NSString *_avatarImageSystemName;
     NSString *_accessoryImageSystemName;
     NSURL *_linkURL;
-    BOOL _shouldDisplayAvatar;
+    bool _shouldDisplayAvatar;
 }
 - (void)loadAvatarIfNeeded;
 - (void)setAvatar:(UIImage *)image;
