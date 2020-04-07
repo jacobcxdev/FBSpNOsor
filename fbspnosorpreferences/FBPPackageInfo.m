@@ -27,8 +27,11 @@ static NSMutableDictionary *_control = nil;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(?<fieldName>.+):\\s*(?<fieldContent>.*)" options:0 error:&error];
     NSArray *matches = [regex matchesInString:output options:0 range:NSMakeRange(0, output.length)];
     _control = [[NSMutableDictionary alloc] init];
-    for (NSTextCheckingResult *match in matches)
-        _control[[output substringWithRange:[match rangeWithName:@"fieldName"]]] = [output substringWithRange:[match rangeWithName:@"fieldContent"]];
+    for (NSTextCheckingResult *match in matches) {
+        NSString *substring = [output substringWithRange:[match rangeWithName:@"fieldContent"]];
+        NSUInteger abLocation = [substring rangeOfString:@" <"].location;
+        _control[[output substringWithRange:[match rangeWithName:@"fieldName"]]] = abLocation == NSNotFound ? substring : [substring substringWithRange:NSMakeRange(0, abLocation)];;
+    }
 }
 + (void)retrieveControl {
     NSDictionary *info = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle bundleForClass:self.class] pathForResource:@"Info" ofType:@"plist"]];
