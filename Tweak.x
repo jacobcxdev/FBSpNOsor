@@ -54,7 +54,7 @@
 // Constructor
 
 %ctor {
-    NSMutableDictionary *settings = [[NSMutableDictionary alloc] initWithContentsOfFile:@"/var/mobile/Library/Preferences/com.jacobcxdev.fbspnosor.plist"];
+    NSDictionary *settings = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.jacobcxdev.fbspnosor.plist"];
     bool enabled = [settings objectForKey:@"enabled"] ? [[settings objectForKey:@"enabled"] boolValue] : true;
     if (!enabled) return;
     %init();
