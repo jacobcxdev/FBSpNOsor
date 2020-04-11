@@ -6,9 +6,13 @@
     <array>
         <dict>
             <key>cellClass</key>
-            <string>FBPGradientHeaderCell</string>
+            <string>JCXGradientHeaderCell</string>
             <key>subtitle</key>
             <string>By {Author} — v{Version}</string>
+            <key>prefsBundle</key>
+            <string>com.jacobcxdev.fbspnosor.preferences</string>
+            <key>tweakBundle</key>
+            <string>com.jacobcxdev.fbspnosor</string>
             <key>icon</key>
             <string>icon-stamp.png</string>
             <key>colors</key>
@@ -46,7 +50,7 @@
         </dict>
         <dict>
             <key>cellClass</key>
-            <string>FBPTwitterCell</string>
+            <string>JCXTwitterCell</string>
             <key>label</key>
             <string>Follow me on Twitter</string>
             <key>username</key>
@@ -56,7 +60,7 @@
         </dict>
         <dict>
             <key>cellClass</key>
-            <string>FBPPayPalCell</string>
+            <string>JCXPayPalCell</string>
             <key>label</key>
             <string>Donate to me via PayPal</string>
             <key>username</key>
@@ -66,7 +70,7 @@
         </dict>
         <dict>
             <key>cellClass</key>
-            <string>FBPCashAppCell</string>
+            <string>JCXCashAppCell</string>
             <key>label</key>
             <string>Donate to me via CashApp</string>
             <key>cashTag</key>
@@ -76,7 +80,7 @@
         </dict>
         <dict>
             <key>cellClass</key>
-            <string>FBPMailCell</string>
+            <string>JCXMailCell</string>
             <key>label</key>
             <string>Email me for support</string>
             <key>emailAddress</key>
@@ -86,7 +90,7 @@
         </dict>
         <dict>
             <key>cellClass</key>
-            <string>FBPGitHubCell</string>
+            <string>JCXGitHubCell</string>
             <key>label</key>
             <string>View the source code on GitHub</string>
             <key>remote</key>

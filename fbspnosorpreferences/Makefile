@@ -6,6 +6,7 @@ FBSpNOsorPreferences_FILES = $(wildcard *.m)
 FBSpNOsorPreferences_INSTALL_PATH = /Library/PreferenceBundles
 FBSpNOsorPreferences_FRAMEWORKS = UIKit
 FBSpNOsorPreferences_PRIVATE_FRAMEWORKS = Preferences
+FBSpNOsorPreferences_EXTRA_FRAMEWORKS = libJCX
 FBSpNOsorPreferences_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/bundle.mk
