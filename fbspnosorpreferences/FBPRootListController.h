@@ -1,8 +1,5 @@
-#import <Preferences/PSListController.h>
-#import <Preferences/PSSpecifier.h>
-#import <NSTask.h>
-#import "FBPPackageInfo.h"
+#import <libJCX/JCXPreferences.h>
 
-@interface FBPRootListController : PSListController
+@interface FBPRootListController : JCXRootListController
 - (void)killall;
 @end
