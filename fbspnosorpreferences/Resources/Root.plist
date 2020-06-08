@@ -9,13 +9,15 @@
             <string>JCXGradientHeaderCell</string>
             <key>subtitle</key>
             <string>By {Author} — v{Version}</string>
+            <key>textColour</key>
+            <string>#FFFFFF</string>
             <key>prefsBundle</key>
             <string>com.jacobcxdev.fbspnosor.preferences</string>
             <key>tweakBundle</key>
             <string>com.jacobcxdev.fbspnosor</string>
             <key>icon</key>
             <string>icon-stamp.png</string>
-            <key>colors</key>
+            <key>colours</key>
             <string>#A4D4FC,#4DBEFF,#00B0FF,#0092FB,#0074EF</string>
             <key>animated</key>
             <true/>
