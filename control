@@ -1,9 +1,9 @@
 Package: com.jacobcxdev.fbspnosor
 Name: FBSpNOsor
-Depends: mobilesubstrate, preferenceloader, firmware (>= 11.0), com.jacobcxdev.libjcx
+Depends: mobilesubstrate, preferenceloader, firmware (>= 11.0), com.jacobcxdev.libjcx (>= 1.1.0)
 Architecture: iphoneos-arm
 Description: Remove sponsored and suggested posts, videos, etc. from Facebook.
 Maintainer: JacobCXDev <jacobcxdev@gmail.com>
 Author: JacobCXDev <jacobcxdev@gmail.com>
 Section: Tweaks
-Version: 1.2.7
+Version: 1.2.8
