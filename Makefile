@@ -1,5 +1,5 @@
 export ARCHS = arm64 arm64e
-export TARGET = iphone::11.0:latest
+export TARGET = iphone::11.0:11.0
 INSTALL_TARGET_PROCESSES = Facebook Preferences
 
 include $(THEOS)/makefiles/common.mk
