@@ -57,6 +57,8 @@
             <string>Follow me on Twitter</string>
             <key>username</key>
             <string>jcxdev</string>
+            <key>avatarURL</key>
+            <string>https://github.com/jacobcxdev.png</string>
             <key>shouldDisplayAvatar</key>
             <true/>
         </dict>
